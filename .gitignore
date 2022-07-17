@@ -105,35 +105,35 @@ dist
 
 
 #dotnet
-*.swp
-*.*~
-project.lock.json
-.DS_Store
-*.pyc
+API/*.swp
+API/*.*~
+API/project.lock.json
+API/.DS_Store
+API/*.pyc
 
 # Visual Studio Code
-.vscode
+API/.vscode
 
 # User-specific files
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
+API/Products/*.suo
+API/Products/*.user
+API/Products/*.userosscache
+API/Products/*.sln.docstates
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
-msbuild.log
-msbuild.err
-msbuild.wrn
+API/Products/[Dd]ebug/
+API/Products/[Dd]ebugPublic/
+API/Products/[Rr]elease/
+API/Products/[Rr]eleases/
+API/Products/x64/
+API/Products/x86/
+API/Products/build/
+API/Products/bld/
+API/Products/[Bb]in/
+API/Products/[Oo]bj/
+API/Products/msbuild.log
+API/Products/msbuild.err
+API/Products/msbuild.wrn
 
 # Visual Studio 2015
-.vs/
+API/Products/.vs/
