@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "mikA/YqO2UZ3CYQCNQyhDe4z9aPV5pJtkbqnPBO8ERA/SYYU9K7+iBNPJFzEqdNDw20bwLJ99nGuHVPSwByBxA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\aseel\\source\\repos\\NET_Angular_CRUD_App\\API\\Products\\Products.API\\Products.API.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Swashbuckle.AspNetCore. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
