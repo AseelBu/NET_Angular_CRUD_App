@@ -1,5 +1,5 @@
 # Logs
-logs
+**/logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -48,7 +48,7 @@ typings/
 *.tsbuildinfo
 
 # Optional npm cache directory
-.npm
+**/.npm
 
 # Optional eslint cache
 .eslintcache
@@ -105,35 +105,35 @@ dist
 
 
 #dotnet
-API/*.swp
-API/*.*~
-API/project.lock.json
-API/.DS_Store
-API/*.pyc
+**/*.swp
+**/*.*~
+**/project.lock.json
+**/.DS_Store
+**/*.pyc
 
 # Visual Studio Code
-API/.vscode
+**/.vscode
 
 # User-specific files
-API/Products/*.suo
-API/Products/*.user
-API/Products/*.userosscache
-API/Products/*.sln.docstates
+**/*.suo
+**/*.user
+**/*.userosscache
+**/*.sln.docstates
 
 # Build results
-API/Products/[Dd]ebug/
-API/Products/[Dd]ebugPublic/
-API/Products/[Rr]elease/
-API/Products/[Rr]eleases/
-API/Products/x64/
-API/Products/x86/
-API/Products/build/
-API/Products/bld/
-API/Products/[Bb]in/
-API/Products/[Oo]bj/
-API/Products/msbuild.log
-API/Products/msbuild.err
-API/Products/msbuild.wrn
+**/[Dd]ebug/
+**/[Dd]ebugPublic/
+**/[Rr]elease/
+**/[Rr]eleases/
+**/x64/
+**/x86/
+**/build/
+**/bld/
+**/[Bb]in/
+**/[Oo]bj/
+**/msbuild.log
+**/msbuild.err
+**/msbuild.wrn
 
 # Visual Studio 2015
-API/Products/.vs/
+**/.vs/
