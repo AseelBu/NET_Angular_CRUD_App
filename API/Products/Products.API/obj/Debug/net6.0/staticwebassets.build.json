@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "EEvd5ZUYwQe5doZVSOCowrDsKSRQXjPHST1VJ2Vvh98=",
+  "Source": "Products.API",
+  "BasePath": "_content/Products.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Products.API\\wwwroot",
+      "Source": "Products.API",
+      "ContentRoot": "C:\\Users\\aseel\\source\\repos\\NET_Angular_CRUD_App\\API\\Products\\Products.API\\wwwroot\\",
+      "BasePath": "_content/Products.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\aseel\\source\\repos\\NET_Angular_CRUD_App\\API\\Products\\Products.API\\wwwroot\\products.json",
+      "SourceId": "Products.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\aseel\\source\\repos\\NET_Angular_CRUD_App\\API\\Products\\Products.API\\wwwroot\\",
+      "BasePath": "_content/Products.API",
+      "RelativePath": "products.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\products.json"
+    }
+  ]
+}
