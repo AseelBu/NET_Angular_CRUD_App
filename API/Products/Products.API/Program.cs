@@ -7,13 +7,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-//REgister DB context
+//Inject DB context
 builder.Services.AddDbContext<ProductContext>(opt =>
 opt.UseInMemoryDatabase("Products"));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors((options) =>
+{
+    options.AddPolicy(name: "default", policy =>
+    {
+        policy.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+    });
+});
 
 var app = builder.Build();
 
@@ -24,7 +32,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("default");
+
 app.UseHttpsRedirection();
+
 //app.UseStaticFiles();
 
 app.UseAuthorization();
