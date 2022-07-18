@@ -1,0 +1,25 @@
+<div class="products-list">
+    
+    <mat-card>
+        <div class="product-row" *ngFor="let prod of productsList">
+            
+            <a class="product-row-details">
+                
+                <span class="product-id p-info">{{prod.id}}</span>
+                <span class="product-name p-info">{{prod.name}}</span>
+                <span class="product-color p-info">{{prod.color}}</span>
+                <span class="product-price p-info">{{prod.price}}</span>
+            
+            </a>
+            <span class="product-row-action">
+                <button mat-flat-button color="warn">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </span>
+      
+        </div>
+    </mat-card>        
+
+</div>
+  
+
