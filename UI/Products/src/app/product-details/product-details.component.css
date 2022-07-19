@@ -1,0 +1,25 @@
+
+.details-card {
+    max-width: fit-content;
+    padding: 3em;
+    margin:auto;
+ 
+  }
+
+form .form-group{
+    margin-bottom:1em;
+}
+
+form label{
+    display: block;
+    margin-bottom:0.5em;
+}
+
+.product-actions{
+    display: flex;
+    justify-content:space-between;
+}
+
+div.status-msg{
+    color:#28a745 ;
+}

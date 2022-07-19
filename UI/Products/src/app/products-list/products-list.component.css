@@ -7,6 +7,12 @@ a, a:hover, a:focus, a:active {
     padding: 2em;
 }
 
+.list-card {
+    max-width: fit-content;
+    padding: 3em;
+    margin:auto;
+}
+
 .product-row{
     margin: 2em;
     display:flex;
@@ -24,6 +30,12 @@ a, a:hover, a:focus, a:active {
 }
 
 .p-info{
-    padding-inline-end: 2em;
+    padding-inline-end: 1em;
+}
+
+span.text-group{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
 }
 

@@ -18,6 +18,18 @@ export class ProductsService {
 
   // Get product by id
   getProduct(id:string): Observable<Product> {
-    return this.http.get<Product>(this.baseUrl+'/'+id);
+    var endpoint = this.baseUrl+'/'+id;
+    return this.http.get<Product>(endpoint);
+  }
+
+  // update product details
+  updateProduct(product: Product): Observable<Product>{
+    return this.http.post<Product>(this.baseUrl,product);
+  }
+
+  // Delete product by id
+  deleteProduct(id: string): Observable<Product> {
+    var endpoint = this.baseUrl+'/'+id;
+    return this.http.delete<Product>(endpoint);
   }
 }

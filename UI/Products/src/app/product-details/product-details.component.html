@@ -1,17 +1,37 @@
 <div class="product-form">
-<form #form="ngForm">
-    <div class="form-group">
-        <label for="product-name">Product Name</label>
-        <input type="text" name="product-name" [(ngModel)]="product.name">
-    </div>
-    <div class="form-group">
-        <label for="product-color">Product Color</label>
-        <input type="text" name="product-color" [(ngModel)]="product.color">
-    </div>
-    <div class="form-group">
-        <label for="product-price">Product Price</label>
-        <input type="number" name="product-price" [(ngModel)]="product.price">
-    </div>
-</form>
+    <mat-card class="details-card">
+        <mat-card-header>
+            <mat-card-title>Product Details</mat-card-title>
+        </mat-card-header>
 
+        
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <mat-card-content>
+                    <div class="form-group">
+                        <label for="product-name">Product Name</label>
+                        <input type="text" name="product-name" [(ngModel)]="product.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-color">Product Color</label>
+                        <input type="text" name="product-color" [(ngModel)]="product.color">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Product Price</label>
+                        <input type="number" name="product-price" [(ngModel)]="product.price">
+                    </div>
+                </mat-card-content>
+                <mat-card-actions class="product-actions">
+                    <button routerLink="" mat-button>Back</button>
+                    <button type="submit" mat-flat-button color="primary">
+                        Update
+                        <!-- <span *ngIf="showCheck"><i class="fa-solid fa-check fa-flip" style="--fa-animation-duration: 4s;"></i></span>
+                        <span *ngIf="!showCheck">Update</span> -->
+                    </button>
+                </mat-card-actions>
+            </form>
+
+            <div *ngIf="showCheck" class="status-msg">
+                <p>Product updated <i class="fa-solid fa-check fa-bounce" style="--fa-animation-duration: 5s;"></i></p>
+            </div>
+    </mat-card>
 </div>

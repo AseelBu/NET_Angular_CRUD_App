@@ -27,4 +27,16 @@ export class ProductsListComponent  implements OnInit {
     );
   }
 
+   // Deletes product by id
+   deleteProduct(id:number){
+    this.productsService.deleteProduct(id.toString())
+    .subscribe(
+      response => {
+      //  console.log(response);
+      this.getAllProducts();
+       
+      }
+    );
+  }
+
 }
