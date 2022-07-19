@@ -87,10 +87,25 @@ namespace Products.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Product>> UpdateProduct(Product product)
         {
-            _context.Product.Add(product);
-            await _context.SaveChangesAsync();
+            ObjectResult response;
+            // if product is new add new product to DB  
+            if (!ProductExists(product.Id))
+                {
+                    _context.Product.Add(product);
+                response =CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+            }
+                else 
+                {
+                // if product exists update product in DB  
+                _context.Entry(product).State = EntityState.Modified;
+                response =Ok(product);
+                }
+                
+                await _context.SaveChangesAsync();
+            
+            
 
-            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+            return response;
         }
 
         // DELETE: api/Products/5
@@ -113,9 +128,9 @@ namespace Products.API.Controllers
             return NoContent();
         }
 
-        //private bool ProductExists(int id)
-        //{
-        //    return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
-        //}
+        private bool ProductExists(int id)
+        {
+            return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
     }
 }
