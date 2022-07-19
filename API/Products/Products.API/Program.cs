@@ -7,9 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-//Inject DB context
+// Inject DB context
 builder.Services.AddDbContext<ProductContext>(opt =>
-opt.UseInMemoryDatabase("Products"));
+        opt.UseInMemoryDatabase("Products"));
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -25,6 +26,9 @@ builder.Services.AddCors((options) =>
 
 var app = builder.Build();
 
+// seed DB with sample data
+DataGenerator.Initialize(app);
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -36,10 +40,10 @@ app.UseCors("default");
 
 app.UseHttpsRedirection();
 
-//app.UseStaticFiles();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();
