@@ -13,6 +13,7 @@ import {FormsModule} from '@angular/forms';
 // Material Modules
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     MatButtonModule,
     MatCardModule,
+    MatTableModule,
     HttpClientModule,
   ],
   providers: [],

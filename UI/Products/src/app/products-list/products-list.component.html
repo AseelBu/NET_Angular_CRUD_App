@@ -1,33 +1,48 @@
-<div class="products-list">
-    
-    <mat-card class="list-card">
-        <mat-card-header>
-            <mat-card-title>Products</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-        <div class="product-row" *ngFor="let prod of productsList">
-            
-            <a routerLink="product-details/{{prod.id}}" class="product-row-details">
-                <span class="text-group">
-                <!-- <span class="product-id p-info">{{prod.id}}</span> -->
-                <span class="product-name p-info">{{prod.name}}</span>
-                <span class="product-color p-info">{{prod.color}}</span>
-                <span class="product-price p-info">{{prod.price}}</span>
-            </span>
-            
-            </a>
-            <span class="product-row-action">
-                <button (click)="deleteProduct(prod.id)" mat-flat-button color="warn">
-                    <i class="fa-solid fa-trash"></i>
-                </button>
-                
-            </span>
-      
-        </div>
-    </mat-card-content>
-    </mat-card>        
+<table mat-table [dataSource]="productsList" class="mat-elevation-z8">
 
-</div>
+    <caption>Products</caption>
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let product" routerLink="product-details/{{product.id}}"> {{product.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let product" routerLink="product-details/{{product.id}}"> {{product.name}} </td>
+    </ng-container>
+  
+    <!-- Color Column -->
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef> Color </th>
+      <td mat-cell *matCellDef="let product" routerLink="product-details/{{product.id}}"> {{product.color}} </td>
+    </ng-container>
+  
+    <!-- Price Column -->
+    <!-- <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let product" routerLink="product-details/{{product.id}}"> {{product.price}} </td>
+    </ng-container> -->
+
+     <!-- Delete product Column -->
+     <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let product">
+             <button (click)="deleteProduct(product.id)" mat-flat-button color="warn">
+            <i class="fa-solid fa-trash"></i>
+        </button> 
+    </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"  class="prod-row"></tr>
+  </table>
+  
+  
 
 
   
