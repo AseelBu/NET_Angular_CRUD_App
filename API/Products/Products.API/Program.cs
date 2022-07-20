@@ -26,7 +26,7 @@ builder.Services.AddCors((options) =>
 
 var app = builder.Build();
 
-// seed DB with sample data
+// Seed DB with sample data
 DataGenerator.Initialize(app);
 
 // Configure the HTTP request pipeline.
@@ -39,7 +39,6 @@ if (app.Environment.IsDevelopment())
 app.UseCors("default");
 
 app.UseHttpsRedirection();
-
 
 app.UseAuthorization();
 
