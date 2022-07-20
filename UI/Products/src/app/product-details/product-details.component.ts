@@ -25,7 +25,6 @@ export class ProductDetailsComponent implements OnInit {
     , private productsService:ProductsService) { }
 
   ngOnInit() {
-    
     this.productId = this.router.snapshot.params.id.toString();
     this.getProduct(this.productId);
   }
@@ -41,6 +40,7 @@ export class ProductDetailsComponent implements OnInit {
     );
   }
 
+  // Updates product details
   onSubmit(){
     this.productsService.updateProduct(this.product)
     .subscribe(
@@ -48,8 +48,6 @@ export class ProductDetailsComponent implements OnInit {
         console.log(response);
         this.showCheck=true;
         setTimeout(()=>{this.showCheck=false},5000);
-
-        
       }
     )
   }
