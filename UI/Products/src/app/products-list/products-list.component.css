@@ -24,3 +24,7 @@ td.mat-cell{
 .prod-row{
     cursor: pointer;
   }
+
+.prod-row:hover{
+    background-color: #78787829;
+}
