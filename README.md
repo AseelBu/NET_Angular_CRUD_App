@@ -1,4 +1,4 @@
-# NET_Angular_CRUD_App
+# ASAP.NET Core & Angular CRUD Web App
 Full-stack CRUD app using ASAP.NET Core and Angular
 
 <img src="images/productsList.png" alt="products List" width="40%"/>
