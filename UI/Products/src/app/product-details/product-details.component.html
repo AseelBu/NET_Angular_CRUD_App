@@ -6,33 +6,33 @@
         </mat-card-header>
 
         <!-- Product details form -->
-            <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="productDetailsForm" (ngSubmit)="onSubmit()">
                 <mat-card-content>
                     <!-- Product Id -->
                     <div class="form-group">
                         <label for="product-id">Product Id</label>
-                        <input type="text" name="product-id" [(ngModel)]="product.id" disabled>
+                        <input type="text"  formControlName="product-id" >
                     </div>
                      <!-- Product Name -->
                     <div class="form-group">
                         <label for="product-name">Product Name</label>
-                        <input type="text" name="product-name" [(ngModel)]="product.name">
+                        <input type="text"  formControlName="product-name" >
                     </div>
                      <!-- Product Color -->
                     <div class="form-group">
                         <label for="product-color">Product Color</label>
-                        <input type="text" name="product-color" [(ngModel)]="product.color">
+                        <input type="text"  formControlName="product-color">
                     </div>
                     <!-- Product Price -->
                     <div class="form-group">
                         <label for="product-price">Product Price</label>
-                        <input type="number" name="product-price" [(ngModel)]="product.price">
+                        <input type="number"  formControlName="product-price">
                     </div>
                 </mat-card-content>
                 <!-- Action buttons -->
                 <mat-card-actions class="product-actions">
                     <button routerLink="" mat-button>Back</button>
-                    <button type="submit" mat-flat-button color="primary"> Update</button>
+                    <button type="submit" mat-flat-button color="primary" [disabled]="!productDetailsForm.valid"> Update</button>
                 </mat-card-actions>
 
             </form>
