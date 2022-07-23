@@ -21,7 +21,7 @@ export const getProducts = createAction(GET_PRODUCTS);
 
 export const getProductsSuccess = createAction(
     GET_PRODUCTS_SUCCESS,
-    props<{ products: Product[]}>()
+    props<{ productsList: Product[]}>()
     );
 
 export const getProductsFailure = createAction(

@@ -20,9 +20,9 @@ export class ProductEffects{
       exhaustMap(()=> 
         this.productsService.getAllProducts()
             .pipe(
-                map(products=> {
-                    console.log("response:::", products)
-                    return productActions.getProductsSuccess({products})
+                map(productsList=> {
+                    console.log("response:::", productsList)
+                    return productActions.getProductsSuccess({productsList})
                 }),
                 catchError((err: any)=> of(productActions.getProductsFailure(err)))
             )
@@ -46,7 +46,7 @@ export class ProductEffects{
     removeProduct$ = createEffect(() =>
     this.actions$.pipe(
       ofType(productActions.removeProduct),
-      exhaustMap(({productId}) => this.productsService.deleteProduct(productId)
+      mergeMap(({productId}) => this.productsService.deleteProduct(productId)
       .pipe(
           map(()=> productActions.removeProductSuccess({productId})),
           catchError((err: any) => of(productActions.removeProductFailure(err)))
