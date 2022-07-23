@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Product } from '../models/product.model';
+import { removeProduct } from '../app-state/product.actions';
 import { ProductsService } from '../service/products.service';
 
 
@@ -13,7 +15,7 @@ export class ProductsListComponent  implements OnInit {
   productsList: Product[] = [];
   displayedColumns: string[] = ['id','name', 'color','delete'];
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private store:Store,private productsService: ProductsService) { }
 
      ngOnInit(): void {
     this.getAllProducts();
@@ -30,6 +32,8 @@ export class ProductsListComponent  implements OnInit {
 
    // Deletes product by id
    deleteProduct(id:number){
+    const productId= id.toString();
+    this.store.dispatch(removeProduct({productId}));
     this.productsService.deleteProduct(id.toString())
     .subscribe(
       response => {

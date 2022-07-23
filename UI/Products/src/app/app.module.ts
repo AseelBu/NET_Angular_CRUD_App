@@ -15,10 +15,14 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+
+//ngrx
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
+// import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { productReducer } from './app-state/product.reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,7 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatTableModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot({ProductsList: productReducer}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
