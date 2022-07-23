@@ -19,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
 //ngrx
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import {ProductEffects} from './app-state/product.effects'
 // import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
@@ -40,7 +41,8 @@ import { productReducer } from './app-state/product.reducer';
     MatCardModule,
     MatTableModule,
     HttpClientModule,
-    StoreModule.forRoot({ProductsList: productReducer}),
+    StoreModule.forRoot({Products: productReducer}),
+    EffectsModule.forRoot([ProductEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
